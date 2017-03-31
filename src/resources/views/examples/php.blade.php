@@ -1,8 +1,11 @@
 <pre>
 $url = '{{ $url }}';
-$method = '{{ strtoupper($method) }}';
+$method = '{{ strtoupper($method) === 'GET' ? 'GET' : 'POST' }}';
 $headers = array(
     "content-type: application/json",
+@if(!in_array(strtoupper($method), ['GET', 'POST']))
+    "_method: {{ strtoupper($method) }}",
+@endif
     "api-key: b1355054-c828-4f5c-a71e-fc23a8034ce5"
 );
 $body = '{"async":false}';

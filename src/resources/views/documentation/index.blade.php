@@ -9,7 +9,7 @@
 			<div class="panel panel-default">
 			  <div class="panel-heading">
 			    <h2 class="panel-title">
-					<span class="label label-default">
+					<span class="label label-default {{ in_array(strtoupper($method), ['GET', 'HEAD']) ? 'label-primary' : '' }} {{ in_array(strtoupper($method), ['DELETE']) ? 'label-danger' : '' }} {{ in_array(strtoupper($method), ['PATCH', 'PUT']) ? 'label-warning' : '' }}">
 						{{ $method }}
 					</span>
 					&nbsp;
@@ -19,11 +19,14 @@
 			    </h2>
 			  </div>
 			  <div class="panel-body">
-				
+
 				@if($route->parameterNames())
+
+				<h4>Parameters</h4>
+
 				<table class="table table-striped table-hover">
 					<thead>
-						Parameter
+						Name
 					</thead>
 					<tbody>
 						@foreach($route->parameterNames() as $parameter_name)

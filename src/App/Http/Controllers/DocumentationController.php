@@ -15,7 +15,7 @@ class DocumentationController extends Controller
     public function index()
     {
     	$routes = array_filter(collect(Route::getRoutes())->toArray(), function ($route) {
-    		return starts_with($route->uri, 'api') AND $route->uri !== 'api';
+    		return starts_with($route->uri, 'api') AND $route->uri !== 'api' AND $route->uri !== 'api/documentation';
     	});
 
         $examples = [
