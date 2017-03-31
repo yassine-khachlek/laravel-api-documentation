@@ -9,7 +9,7 @@
 			<div class="panel panel-default">
 			  <div class="panel-heading">
 			    <h2 class="panel-title">
-					<span class="label label-default {{ in_array(strtoupper($method), ['GET', 'HEAD']) ? 'label-primary' : '' }} {{ in_array(strtoupper($method), ['DELETE']) ? 'label-danger' : '' }} {{ in_array(strtoupper($method), ['PATCH', 'PUT']) ? 'label-warning' : '' }}">
+					<span class="label label-default {{ in_array(strtoupper($method), ['GET', 'HEAD']) ? 'label-primary' : '' }} {{ in_array(strtoupper($method), ['DELETE']) ? 'label-danger' : '' }} {{ in_array(strtoupper($method), ['PATCH', 'PUT']) ? 'label-warning' : '' }} {{ in_array(strtoupper($method), ['POST']) ? 'label-success' : '' }}">
 						{{ $method }}
 					</span>
 					&nbsp;
